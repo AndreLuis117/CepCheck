@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="422.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Consulta_Controller">
+   <children>
+      <Pane prefHeight="104.0" prefWidth="719.0" style="-fx-background-color: FFFFFF;">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="106.0" layoutX="26.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/home.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="189.0" layoutY="26.0" prefHeight="53.0" prefWidth="222.0" text="CepCheck">
+               <font>
+                  <Font name="Arial Bold" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" layoutY="104.0" prefHeight="118.0" prefWidth="719.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <Label layoutX="24.0" layoutY="43.0" prefHeight="33.0" prefWidth="263.0" text="Digite um cep a ser pesquisado:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cepField" layoutX="282.0" layoutY="43.0" prefHeight="33.0" prefWidth="155.0" promptText="9 digítos" />
+            <Button fx:id="consultarCep" layoutX="513.0" layoutY="40.0" mnemonicParsing="false" onAction="#consulta" prefHeight="33.0" prefWidth="101.0" text="Consultar">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+         </children>
+      </Pane>
+      <TableView fx:id="cepView" layoutY="222.0" prefHeight="200.0" prefWidth="719.0">
+        <columns>
+          <TableColumn prefWidth="113.0" text="Rua/Logradouro">
+            <cellValueFactory>
+                <PropertyValueFactory property="logradouro" />
+            </cellValueFactory>
+            </TableColumn>
+          <TableColumn prefWidth="99.0" text="Complemento">
+              <cellValueFactory>
+                  <PropertyValueFactory property="complemento" />
+              </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="113.0" text="Bairro">
+                <cellValueFactory>
+                    <PropertyValueFactory property="bairro" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="113.0" text="Localidade">
+                <cellValueFactory>
+                    <PropertyValueFactory property="localidade" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="85.0" text="UF">
+                <cellValueFactory>
+                    <PropertyValueFactory property="uf" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="58.0" text="IBGE">
+                <cellValueFactory>
+                    <PropertyValueFactory property="ibge" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="137.0" text="GIA">
+                <cellValueFactory>
+                    <PropertyValueFactory property="gia" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
